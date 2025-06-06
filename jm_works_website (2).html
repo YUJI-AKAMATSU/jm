@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jm.works</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&display=swap" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+      body { font-family: 'Outfit', sans-serif; scroll-behavior: smooth; }
+    </style>
+    <script>
+      function toggleDropdown() {
+        const dropdown = document.getElementById("serviceDropdown");
+        dropdown.classList.toggle("hidden");
+      }
+      function showService(id) {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+        document.getElementById("serviceDropdown").classList.add("hidden");
+      }
+    </script>
+  </head>
+  <body class="min-h-screen bg-neutral-50 overflow-x-hidden">
+    <header class="fixed top-0 left-0 right-0 bg-white border-b border-[#ededed] z-50">
+      <div class="flex justify-between items-center px-10 py-3">
+        <div class="flex items-center gap-4 text-[#141414]">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4">
+            <path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+          </svg>
+          <h2 class="text-lg font-bold">jm.works</h2>
+        </div>
+        <nav class="flex gap-9 text-sm font-medium">
+          <div class="relative">
+            <button onclick="toggleDropdown()" class="text-[#141414]">Service</button>
+            <div id="serviceDropdown" class="absolute hidden bg-white shadow-md mt-2 py-2 w-56 z-10">
+              <a href="#" onclick="showService('decision')" class="block px-4 py-2 text-sm text-[#141414] hover:bg-neutral-100">Decision Science</a>
+              <a href="#" onclick="showService('ai')" class="block px-4 py-2 text-sm text-[#141414] hover:bg-neutral-100">AI / DATA Science</a>
+              <a href="#" onclick="showService('process')" class="block px-4 py-2 text-sm text-[#141414] hover:bg-neutral-100">Process & IT Consulting</a>
+              <a href="#" onclick="showService('research')" class="block px-4 py-2 text-sm text-[#141414] font-bold bg-neutral-100">Research</a>
+            </div>
+          </div>
+          <a href="#about" class="text-[#141414]">About Us</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="pt-[72px]">
+      <section class="px-4 py-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="rounded-xl overflow-hidden min-h-[400px] md:min-h-[500px] bg-no-repeat bg-center flex flex-col justify-end items-start px-6 py-10 sm:px-12"
+            style='background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuB5rY81qG59LVxu8dvy9awJipJlnU4iEIx6LBEdQENnqJ0pvu_Kz2_x3ymv5V6bY6lTVt5EpjZ_IMQKhXTqu2SmkOE5pLD6bEynu8hnGKTip_gxjfVi0QpsqxXDs_duN7XKy_9YU0wyXsanjdCoa2Jnpi6L_7u1QH5xZNQp3GnrN9pjPmzE0jQjULNIq6ANsIz_9_bDzh91MsnbrRQgWGs1hxbBPh5GfbQuXj4-CEZyjq3OGPDlO1LxzNzwg2cIrrQ728dHZKcEnP8"); background-size: 90%; background-position: center 20%;'>
+            <div class="text-white max-w-3xl text-center px-4 ml-12 mr-auto">
+              <h1 class="text-4xl sm:text-5xl font-black leading-tight tracking-tight whitespace-nowrap">変わり続ける時代に、変わらない本質を。</h1>
+              <p class="mt-4 text-sm sm:text-base font-normal leading-relaxed text-white max-w-4xl mx-auto whitespace-nowrap">
+                We provide strategic consulting services to help businesses adapt and thrive in a constantly changing world.
+              </p>
+              <p class="text-sm sm:text-base font-normal leading-relaxed text-white max-w-2xl mx-auto">
+                Our approach focuses on identifying and leveraging the core strengths of your organization to achieve sustainable growth and success.
+              </p>
+              <div class="w-full flex justify-center mt-6">
+                <a href="#about" class="mb-6 bg-white text-black font-bold px-6 py-2 rounded-full shadow-md hover:bg-gray-100 transition inline-block text-center">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="px-[5%] py-5">
+        <h2 class="text-xl font-bold">About</h2>
+        <p class="mt-1 text-base">意思決定の最適化を通じて、持続的な価値を創出する専門家集団です。</p>
+      </section>
+
+      <section id="research" class="px-[5%] py-5">
+        <h2 class="text-xl font-bold">Research</h2>
+        <p class="mt-1 text-base">時系列・時空間データ解析、視覚情報解析、最適化、World Model（機械学習、強化学習、生成AI、コンピュータビジョン、NN）</p>
+      </section>
+
+      <section id="service-visuals" class="px-[5%] py-5">
+        <h2 class="text-xl font-bold">Service</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
+          <div id="decision" class="border border-[#dbdbdb] bg-white p-6 rounded-lg text-center">
+            <p class="text-base font-semibold">Decision Science</p>
+            <p class="text-sm text-neutral-600 mt-2">意思決定の最適化に基づく分析と戦略立案</p>
+          </div>
+          <div id="ai" class="border border-[#dbdbdb] bg-white p-6 rounded-lg text-center">
+            <p class="text-base font-semibold">AI / DATA Science</p>
+            <p class="text-sm text-neutral-600 mt-2">AI・統計解析による知見の抽出と応用</p>
+          </div>
+          <div id="process" class="border border-[#dbdbdb] bg-white p-6 rounded-lg text-center">
+            <p class="text-base font-semibold">Process & IT Consulting</p>
+            <p class="text-sm text-neutral-600 mt-2">業務プロセス改善とシステム導入支援</p>
+          </div>
+          <div id="research-service" class="border border-[#dbdbdb] bg-white p-6 rounded-lg text-center">
+            <p class="text-base font-semibold">Research</p>
+            <p class="text-sm text-neutral-600 mt-2">先端研究</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="px-[5%] py-5">
+        <h2 class="text-xl font-bold">Message</h2>
+        <p class="mt-2 text-base">本質を理解し、かたちにする。</p>
+        <p class="text-neutral-500 text-sm mt-1">YUJI AKAMATSU</p>
+      </section>
+
+      <section class="px-[5%] py-5">
+        <h2 class="text-xl font-bold">Experience</h2>
+        <ul class="list-disc list-inside mt-1 text-base space-y-1">
+          <li>3D画像処理及びデータ解析における業務改革やPOC、IT導入支援 [設計製造/画像診断]</li>
+          <li>大手・中小製造業への業務改革やPOC、IT導入支援（ECM/SCMなど）</li>
+          <li>市場動向分析（AI市場・技術/業界トレンド）及びビジョンとシナリオ設計</li>
+        </ul>
+      </section>
+
+      <section class="px-[5%] py-5">
+        <h2 class="text-xl font-bold">Contact</h2>
+        <p class="text-base mb-4">お気軽にご相談ください。</p>
+        <form class="space-y-4 max-w-xl">
+          <input type="text" placeholder="Your Name" class="w-full h-12 px-4 border border-[#dbdbdb] rounded-xl" />
+          <input type="email" placeholder="Email Address" class="w-full h-12 px-4 border border-[#dbdbdb] rounded-xl" />
+          <input type="text" placeholder="Subject" class="w-full h-12 px-4 border border-[#dbdbdb] rounded-xl" />
+          <textarea placeholder="Your Message" class="w-full h-36 px-4 border border-[#dbdbdb] rounded-xl"></textarea>
+          <button type="submit" class="bg-black text-white font-bold px-6 py-2 rounded-full">Send</button>
+        </form>
+        <p class="text-neutral-500 text-sm mt-3">✉️ contact@example.co.jp</p>
+      </section>
+    </main>
+  </body>
+</html>
